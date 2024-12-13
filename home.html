@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Study Materials</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header {
+            background-color: #4a4a4a;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        .logo {
+            font-style: italic;
+            font-size: 1.5rem;
+            margin-right: 1rem;
+        }
+        main {
+            flex: 1;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        h1, h2 {
+            color: #333;
+        }
+        .container {
+            background-color: #f0f0f0;
+            padding: 2rem;
+            border-radius: 8px;
+            margin-top: 2rem;
+        }
+        .folder {
+            background-color: #ffd700;
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        .folder:hover {
+            background-color: #ffcc00;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+        #visitorCount {
+            font-weight: bold;
+        }
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+            }
+            .logo {
+                margin-bottom: 0.5rem;
+            }
+            .logout-btn {
+                width: 100%;
+                text-align: center;
+                margin-top: 0.5rem;
+            }
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        .logout-btn {
+            background-color: black;
+            color: white;
+            border: none;
+            padding: 0.5rem 1rem;
+            cursor: pointer;
+            font-size: 1rem;
+            border-radius: 4px;
+            transition: opacity 0.3s;
+            margin-left: 1050px;
+        }
+        .logout-btn:hover {
+            opacity: 0.8;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <span class="logo">📚</span>
+        <span> Free Materials By Codest</span>
+        <a href="index.html" class="logout-btn">Logout</a>
+    </header>
+
+    <main>
+        <h1>Welcome to Study Materials</h1>
+        <p>Your one-stop destination for all your study needs!</p>
+
+        <div class="container">
+            <h2>Access Freely</h2>
+            <p>There are no limits to access. Explore our wide range of study materials!</p>
+            <a href="1st Year"><div class="folder" onclick="alert('PDF will open here')">1st Year BCA Notes</div></a>
+            <a href="2nd Year"><div class="folder" onclick="alert('PDF will open here')">2st Year BCA Notes</div></a>
+            <a href="3rd Year"><div class="folder" onclick="alert('PDF will open here')">3st Year BCA Notes</div></a>
+        </div>
+    </main>
+
+    <footer>
+        <p>This project aims to provide free and accessible study materials to students worldwide.</p>
+        <p>Visitor Count: <span id="visitorCount">0</span></p>
+    </footer>
+
+    <script>
+        // Simulated visitor counter using local storage
+        function updateVisitorCount() {
+            let count = localStorage.getItem('visitorCount');
+            if (!count) {
+                count = 0;
+            }
+            count = parseInt(count) + 1;
+            localStorage.setItem('visitorCount', count);
+            document.getElementById('visitorCount').textContent = count;
+        }
+
+        // Call the function when the page loads
+        updateVisitorCount();
+    </script>
+</body>
+</html>
